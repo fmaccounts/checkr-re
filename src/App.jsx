@@ -36,7 +36,6 @@ const TYPES=[
 {id:"etw-alt",label:"Eigentumswohnung",sub:"Altbau vor 1980",desc:"Charme & hohe Decken — aber Asbest, alte Leitungen und Feuchtigkeit.",extra:[
 {id:"x1",phase:"besichtigung",text:"Wurde das Gebäude auf Asbest geprüft — kein Verdacht?",sev:2,tip:"Vinyl- und PVC-Böden, Eternit-Platten und bestimmte Putze vor 1990 enthalten häufig Asbest. Nie brechen oder schleifen. Vor jeglichen Eingriffen ist eine professionelle Analyse zwingend empfohlen. Die Entsorgung muss durch zertifizierte Fachfirmen erfolgen und ist kostspielig."},
 {id:"x2",phase:"besichtigung",text:"Sind die Wasserleitungen frei von Bleirohren?",sev:2,tip:"Bleirohre sind gesundheitsschädlich. Erkennbar am weichen, grauen Metall. Prüfe sichtbare Leitungen im Keller und unter Spülbecken. Ein kompletter Austausch aller Wasserleitungen ist zwingend nötig und kostspielig."},
-{id:"x3",phase:"besichtigung",text:"Ist die Elektroinstallation mit Erdung und FI-Schutzschalter ausgestattet?",sev:2,tip:"Ohne FI besteht akute Brandgefahr. Eine Kompletterneuerung der Elektroinstallation ist aufwändig und teuer. Prüfe auch ob Leitungsquerschnitte für moderne Geräte ausreichen."},
 {id:"x4",phase:"besichtigung",text:"Sind die Holzbalkendecken in gutem Zustand — kein Durchhängen, kein morsches Holz?",sev:2,tip:"Auf Durchhängen, starkes Knarzen und Bohrmehl (Holzwurm) achten. Morsche Stellen bei Bad/Küche deuten auf Feuchtigkeitsschäden. Sanierung extrem aufwändig."},
 {id:"x5",phase:"besichtigung",text:"Ist eine intakte Fassadendämmung vorhanden?",sev:1,tip:"Altbauten vor 1980 haben oft keine Aussendämmung. WDVS prüfen auf Algenbefall, Risse, Spechtschäden. Ohne Dämmung = hohe Heizkosten."},
 {id:"x6",phase:"dokumente",text:"Hast du die Protokolle der Eigentümerversammlung geprüft — keine Sonderumlagen geplant?",sev:2,tip:"Protokolle der letzten 3–5 Jahre zeigen geplante Sanierungen, Streitigkeiten und Sonderumlagen. VOR dem Kaufentscheid einfordern."},
@@ -55,13 +54,14 @@ const TYPES=[
 ]},
 {id:"efh",label:"Einfamilienhaus",sub:"Alle Baujahre",desc:"Von Dach bis Keller, Garten bis Garage — das volle Programm.",extra:[
 {id:"x20",phase:"besichtigung",text:"Ist das Dach in gutem Zustand — keine verrutschten Ziegel, kein Moosbefall?",sev:2,tip:"Lebensdauer 40–60 Jahre. Moosbefall = hohe Feuchtigkeit. Eine Dachsanierung gehört zu den teuersten Massnahmen."},
-{id:"x21",phase:"besichtigung",text:"Ist der Dachstuhl von innen trocken und frei von Schädlingsbefall?",sev:2,tip:"Im Dachboden auf dunkle Flecken, modrigen Geruch und Bohrmehl achten."},
+{id:"x21",phase:"besichtigung",text:"Ist der Dachstuhl von innen trocken und frei von Schädlingsbefall?",sev:2,tip:"Unbedingt den Dachboden besichtigen — auch wenn der Verkäufer abwiegelt. Achte auf dunkle Flecken am Holz, modrigen Geruch, Bohrmehl (Holzwurm) und Lichteinfall durch das Dach. Morsches Holz an den Auflagepunkten ist besonders kritisch für die Statik."},
 {id:"x22",phase:"besichtigung",text:"Ist der Keller trocken, rissfrei und die Drainage intakt?",sev:2,tip:"Alle Kellerräume prüfen: Geruch, Wasserränder, Salzausblühungen. Die nachträgliche Abdichtung von aussen ist aufwändig und teuer."},
 {id:"x23",phase:"besichtigung",text:"Ist die Fassade rissfrei und der Sockel trocken?",sev:1,tip:"Risse >2mm = Setzungsschäden. Abblätternder Putz unten = fehlende Horizontalsperre."},
 {id:"x24",phase:"besichtigung",text:"Ist der Garten unproblematisch — keine Bäume zu nah am Haus, Entwässerung intakt?",sev:1,tip:"Wurzeln können Fundamente beschädigen. Bei Hanglagen Entwässerung und Stützmauern prüfen."},
 {id:"x25",phase:"dokumente",text:"Hast du den Zonenplan und die Ausnützungsziffer geprüft?",sev:1,tip:"Bestimmt ob An-/Aufbauten möglich. Auch Nachbars Verdichtungspotenzial beachten!"},
 {id:"x26",phase:"dokumente",text:"Hast du die Naturgefahrenkarte geprüft — kein Risikogebiet?",sev:2,tip:"Bei der zuständigen Behörde öffentlich einsehbar. Gefährdung = teurere Versicherung oder unversicherbar."},
 {id:"x27",phase:"dokumente",text:"Ist die Gebäudeversicherung inkl. Elementarschäden ausreichend?",sev:1,tip:"Deckungssumme muss Neuwert entsprechen. Unterversicherung im Schadensfall ruinös."},
+{id:"x28",phase:"dokumente",text:"Liegen für alle Anbauten gültige Baugenehmigungen vor?",sev:2,tip:"Bei EFH werden oft Garagen, Wintergärten oder Carports ohne Genehmigung gebaut. Im schlimmsten Fall droht Rückbau auf deine Kosten. Fordere die Genehmigungen ein und vergleiche mit dem tatsächlichen Zustand."},
 ]},
 {id:"reihen",label:"Reihenhaus",sub:"Mittel- & Eckhaus",desc:"Geteilte Wände — Schallschutz und Reglement entscheidend.",extra:[
 {id:"x30",phase:"besichtigung",text:"Ist der Schallschutz zur Nachbarwand ausreichend?",sev:2,tip:"Klopfe an die Wand. Nachrüstung fast unmöglich. Teste wenn Nachbarn da sind."},
@@ -81,7 +81,7 @@ const TYPES=[
 {id:"x44",phase:"dokumente",text:"Hast du eine vollständige Mieterliste mit Mietzinsen erhalten?",sev:2,tip:"Langzeit-Mieter = stabil aber evtl. unter Markt. Offene Forderungen prüfen."},
 {id:"x45",phase:"dokumente",text:"Ist ein CAPEX- oder Sanierungsplan vorhanden?",sev:2,tip:"Ohne = blind kaufen. 10-Jahres-Plan anfordern."},
 {id:"x46",phase:"dokumente",text:"Hast du alle Mietverträge auf Sondervereinbarungen geprüft?",sev:1,tip:"Sondervereinbarungen können Ertrag beeinflussen."},
-{id:"x47",phase:"dokumente",text:"Ist die Gebäudeversicherung ausreichend?",sev:1,tip:"Muss Neuwert entsprechen. Bei MFH schnell sechsstellig."},
+{id:"x47",phase:"dokumente",text:"Deckt die Gebäudeversicherung den Neuwert und alle Mietausfälle?",sev:1,tip:"Bei Mehrfamilienhäusern ist neben der Gebäudedeckung auch eine Mietausfallversicherung wichtig. Prüfe die Deckungssumme gegen den aktuellen Neuwert."},
 ]},
 ];
 
@@ -103,7 +103,7 @@ const PHASES=[
 {id:"k5",text:"Zweite Besichtigung mit Gutachter willkommen?",sev:2,tip:"Wird ein Sachverständiger abgelehnt, ist das ein ernstes Warnsignal."},
 {id:"k6",text:"Besichtigung zu verschiedenen Tageszeiten möglich?",sev:0,tip:"Tagsüber UND abends/Wochenende — für die wahre Lärmbelastung und Nachbarschaft."},
 ]},
-{id:"besichtigung",label:"Besichtigung",sub:"Vor Ort prüfen",intro:"Mindestens 45 Minuten einplanen. Von aussen nach innen, oben nach unten. Nicht hetzen lassen.",flags:[
+{id:"besichtigung",label:"Besichtigung",sub:"Vor Ort prüfen",intro:"Mindestens 45 Minuten einplanen. Von aussen nach innen, oben nach unten. Nicht hetzen lassen. Bei älteren Gebäuden oder Einfamilienhäusern empfiehlt sich eine zweite Besichtigung mit einem unabhängigen Sachverständigen.",flags:[
 {id:"b1",text:"Ist die Fassade in gutem Zustand — ohne Risse, Putzschäden oder Feuchtigkeit?",sev:2,tip:"Risse über 2mm können auf Setzungsschäden hinweisen. Verfärbungen und abblätternder Putz im Sockelbereich deuten auf aufsteigende Feuchtigkeit hin. Lasse grössere Risse von einem Fachmann beurteilen."},
 {id:"b2",text:"Ist der Keller trocken und geruchsfrei?",sev:2,tip:"Der Keller ist die ehrlichste Zone im Haus. Achte auf muffigen Geruch (auch wenn gelüftet wurde), Salzausblühungen an den Wänden und feuchte Ecken. Feuchtigkeit im Keller kann auf fehlende Drainage oder eindringendes Grundwasser hindeuten. Die Sanierung ist aufwändig und teuer."},
 {id:"b3",text:"Sind die Fenster in gutem Zustand — Doppel-/Dreifachverglasung, dichte Rahmen?",sev:1,tip:"Kondenswasser zwischen den Scheiben bedeutet defekte Isolierverglasung — die Fenster müssen komplett ersetzt werden. Prüfe auch die Dichtungen und das Alter. Fenster über 25 Jahre stehen meist bald zum Austausch an."},
@@ -112,6 +112,9 @@ const PHASES=[
 {id:"b6",text:"Sind Bad und Küche in gutem Zustand — saubere Fugen, kein Schimmel?",sev:1,tip:"Schwarze Fugen in Dusche und Bad bedeuten Schimmelbefall. Teste auch den Wasserdruck und die Warmwasser-Aufbereitung. Sichtbarer Schimmel ist oft nur die Oberfläche eines tieferliegenden Feuchtigkeitsproblems."},
 {id:"b7",text:"Ist die Elektroinstallation zeitgemäss — mit FI-Schutzschalter?",sev:1,tip:"Öffne den Sicherungskasten: Ist ein FI-Schutzschalter vorhanden? Sind die Sicherungen beschriftet? Prüfe auch ob der Leitungsquerschnitt für moderne Geräte wie Induktionsherd oder E-Auto-Laden ausreicht."},
 {id:"b8",text:"Ist die Umgebung ruhig und die Infrastruktur gut?",sev:1,tip:"Gehe vor und nach der Besichtigung durch die Umgebung. Achte auf Verkehrslärm, Gerüche und die ÖV-Anbindung. Komme ein zweites Mal zu einer anderen Tageszeit — abends und am Wochenende zeigt sich die wahre Lärmbelastung."},
+{id:"b10",text:"Wird während der Besichtigung auffällig gelüftet oder stehen Raumdüfte?",sev:1,tip:"Offene Fenster bei der Besichtigung können Gerüche vertuschen — muffiger Keller, Schimmel, Rauch. Bitte darum, die Fenster kurz zu schliessen und achte auf den natürlichen Raumgeruch. Raumdüfte sind ein klassisches Mittel um Probleme zu verbergen."},
+{id:"b11",text:"Sind alle Wände frei sichtbar — keine Schränke oder Bilder die Schäden verdecken?",sev:1,tip:"Grosse Schränke, Wandteppiche oder Bilder an ungewöhnlichen Stellen können Schimmel, Risse oder Feuchtigkeitsschäden verbergen. Bitte darum, dahinter zu schauen — oder frage direkt, ob bekannte Schäden hinter Möbeln verborgen sind."},
+{id:"b12",text:"Konntest du mit Nachbarn über das Haus und die Gegend sprechen?",sev:0,tip:"Nachbarn wissen oft mehr als der Verkäufer zugibt — über Lärmbelastung, frühere Wasserschäden, geplante Bauprojekte in der Umgebung oder Probleme mit der Hausverwaltung. Ein kurzes Gespräch an der Tür kann sehr aufschlussreich sein."},
 {id:"b9",text:"Funktionieren Türen, Böden und Treppen einwandfrei?",sev:0,tip:"Klemmende Türen können auf Setzungen im Gebäude hindeuten. Prüfe Böden auf Unebenheiten und lose Stellen. Bei Treppen auf Stabilität und fehlende Handläufe achten."},
 ]},
 {id:"dokumente",label:"Dokumente & Finanzen",sub:"Papiere prüfen",intro:"Was nicht dokumentiert ist, existiert nicht. Was hier übersehen wird, wird teuer.",flags:[
@@ -152,11 +155,14 @@ export default function App(){
   const[pop,setPop]=useState(false);
   const[ans,setAns]=useState({});
   const[tips,setT]=useState({});
+  const[photos,setPhotos]=useState({});
   const[saved,setSaved]=useState([]);
   const[nm,setNm]=useState("");
   const[vid,setVid]=useState(null);
   const[editNm,setEditNm]=useState(null);
   const ref=useRef(null);
+  const fileRef=useRef(null);
+  const[photoTarget,setPhotoTarget]=useState(null);
   useEffect(()=>{ref.current?.scrollTo(0,0)},[scr,pi,vid]);
 
   // Colors
@@ -182,8 +188,21 @@ export default function App(){
   const next=()=>{if(pi<phases.length-1){setPi(pi+1);setPop(true);}else go("summary");};
   const save=()=>{
     if(!nm.trim())return;const t=TYPES.find(x=>x.id===typ);
-    setSaved(p=>[{id:Date.now(),nm:nm.trim(),type:t?.label||"",sub:t?.sub||"",tId:typ,date:new Date().toLocaleDateString("de-CH"),yes:yC,no:nos.length,skip:sC,vd,answers:{...ans},details:nos.map(f=>({text:f.text,tip:f.tip,sev:f.sev,phase:phases.find(p2=>af(p2).some(x=>x.id===f.id))?.label||""}))},...p]);
+    setSaved(p=>[{id:Date.now(),nm:nm.trim(),type:t?.label||"",sub:t?.sub||"",tId:typ,date:new Date().toLocaleDateString("de-CH"),yes:yC,no:nos.length,skip:sC,vd,answers:{...ans},photos:{...photos},details:nos.map(f=>({text:f.text,tip:f.tip,sev:f.sev,phase:phases.find(p2=>af(p2).some(x=>x.id===f.id))?.label||""}))},...p]);
     go("home");setTyp(null);setAns({});setT({});setNm("");
+  };
+  const handlePhoto=(flagId)=>{
+    setPhotoTarget(flagId);
+    fileRef.current?.click();
+  };
+  const onFileChange=(e)=>{
+    const file=e.target.files?.[0];
+    if(file&&photoTarget){
+      const url=URL.createObjectURL(file);
+      setPhotos(p=>({...p,[photoTarget]:[...(p[photoTarget]||[]),url]}));
+    }
+    e.target.value="";
+    setPhotoTarget(null);
   };
   const tn=TYPES.find(t=>t.id===typ);
 
@@ -209,7 +228,7 @@ export default function App(){
   // Update saved after editing
   const updateSaved=(oldId)=>{
     const t=TYPES.find(x=>x.id===typ);
-    setSaved(p=>p.map(s=>s.id===oldId?{...s,nm:nm.trim()||s.nm,yes:yC,no:nos.length,skip:sC,vd,answers:{...ans},details:nos.map(f=>({text:f.text,tip:f.tip,sev:f.sev,phase:phases.find(p2=>af(p2).some(x=>x.id===f.id))?.label||""}))}:s));
+    setSaved(p=>p.map(s=>s.id===oldId?{...s,nm:nm.trim()||s.nm,yes:yC,no:nos.length,skip:sC,vd,answers:{...ans},photos:{...photos},details:nos.map(f=>({text:f.text,tip:f.tip,sev:f.sev,phase:phases.find(p2=>af(p2).some(x=>x.id===f.id))?.label||""}))}:s));
     go("home");setTyp(null);setAns({});setT({});setNm("");
   };
 
@@ -239,7 +258,20 @@ export default function App(){
                 display:"flex",alignItems:"center",justifyContent:"center",gap:3,
               }}>{v==="yes"?"✓":v==="no"?"✗":"–"} {l}</button>
             ))}
+            <button onClick={()=>handlePhoto(f.id)} style={{padding:"12px 10px",borderRadius:10,border:"none",background:C.s2,color:photos[f.id]?.length?C.lime:C.ink3,display:"flex",alignItems:"center",justifyContent:"center",fontSize:16}}>
+              📷{photos[f.id]?.length>0&&<span style={{fontFamily:F.m,fontSize:9,marginLeft:2}}>{photos[f.id].length}</span>}
+            </button>
           </div>
+          {photos[f.id]?.length>0&&(
+            <div style={{display:"flex",gap:6,marginTop:8,overflowX:"auto"}}>
+              {photos[f.id].map((url,i)=>(
+                <div key={i} style={{position:"relative",flexShrink:0}}>
+                  <img src={url} style={{width:56,height:56,borderRadius:6,objectFit:"cover",border:`1px solid ${C.ln}`}}/>
+                  <button onClick={()=>setPhotos(p=>({...p,[f.id]:p[f.id].filter((_,j)=>j!==i)}))} style={{position:"absolute",top:-4,right:-4,width:16,height:16,borderRadius:8,background:C.err,color:"#fff",border:"none",fontSize:10,display:"flex",alignItems:"center",justifyContent:"center",cursor:"pointer"}}>✕</button>
+                </div>
+              ))}
+            </div>
+          )}
           {a==="no"&&(
             <div style={{marginTop:12,padding:"14px",background:"rgba(245,90,90,.04)",borderRadius:10,borderLeft:`3px solid ${C.err}`,fontSize:13,fontFamily:F.b,color:C.ink2,lineHeight:1.7}}>
               <div style={{fontFamily:F.m,fontSize:9,color:C.err,letterSpacing:1,marginBottom:6,textTransform:"uppercase"}}>Achtung</div>
@@ -265,6 +297,7 @@ export default function App(){
     <style>{CSS}</style>
     <div className="app">
       <div className="safe"/>
+      <input ref={fileRef} type="file" accept="image/*" capture="environment" style={{display:"none"}} onChange={onFileChange}/>
 
       {scr!=="home"&&(
         <div className="hdr">
